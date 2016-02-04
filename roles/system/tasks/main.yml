@@ -1,0 +1,22 @@
+---
+# file: roles/system/tasks/main.yml
+
+- name: update apt, upgrade apt
+  apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: ensure the mumble service is set to start-up
+  service:
+    name: mumble-server
+    enabled: yes
+
+- name: place the mumble server ini from template
+  template:
+    src: mumble-server.ini.j2
+    dest: /etc/mumble-server.ini
+    group: root
+    owner: root
+    mode: u=rw,g=rw
+
+# vim:ft=ansible)

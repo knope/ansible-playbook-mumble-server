@@ -1,0 +1,16 @@
+---
+# file: roles/mumble/vars/main.yml
+
+server_port: 64738
+server_password: ""
+bandwidth: 72000
+users: 42
+mumble_user: mumbler
+ice_warn_0_1: 1
+message_max_size: 65536
+mumble_db: "/var/lib/mumble-server/mumble-server.sqlite"
+mumble_log: /var/log/mumble-server/mumble-server.log
+mumble_pid: /var/run/mumble-server/mumble-server.pid
+welcome_text: '<br />Welcome! .<br />Enjoy your stay, dont break things...  :) <br />'
+
+# vim:ft=ansible)

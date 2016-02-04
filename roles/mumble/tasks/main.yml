@@ -1,0 +1,9 @@
+---
+# file: roles/mumble/tasks/main.yml
+
+- name: install mumble-server package
+  apt:
+    name: mumble-server
+    state: present
+
+# vim:ft=ansible)
