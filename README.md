@@ -7,3 +7,6 @@
 ###### review
 - roles/mumble/vars/main.yml
     - for many of the variables in the system ini file, and user definition.
+
+
+    currently working.
