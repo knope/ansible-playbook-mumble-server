@@ -2,8 +2,8 @@
 # file: roles/system/tasks/main.yml
 
 - name: update apt, upgrade apt
-apt:
-  update_cache: yes
-  upgrade: yes
+  apt:
+    update_cache: yes
+    upgrade: yes
 
 # vim:ft=ansible)
