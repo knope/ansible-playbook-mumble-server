@@ -31,4 +31,8 @@
     owner: root
     mode: u=rw,g=rw
 
+- name: start mumble server
+  service:
+    name: mumble-server
+    state: restarted
 # vim:ft=ansible)
