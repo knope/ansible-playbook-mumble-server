@@ -7,16 +7,28 @@
     state: present
 
 - name: ensure the mumble service is set to start-up
-service:
-  name: mumble-server
-  enabled: yes
+  service:
+    name: mumble-server
+    enabled: yes
+
+- name: create mumble group
+  group:
+    name: mumble
+    state: present
+
+- name: create mumble_user
+  user:
+    name: "{{ mumble_user }}"
+    groups: mumble
+    shell: "/bin/bash"
+    state: present
 
 - name: place the mumble server ini from template
-template:
-  src: mumble-server.ini.j2
-  dest: /etc/mumble-server.ini
-  group: root
-  owner: root
-  mode: u=rw,g=rw
+  template:
+    src: mumble-server.ini.j2
+    dest: /etc/mumble-server.ini
+    group: root
+    owner: root
+    mode: u=rw,g=rw
 
 # vim:ft=ansible)
